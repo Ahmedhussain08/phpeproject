@@ -50,6 +50,12 @@ if(isset($_POST['btn'])){
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <style>
+        ::placeholder{
+            color: rgb(183, 186, 201) !important;
+
+        }
+    </style>
 </head>
 <body>
 <h1 class="text-center mt-4">Update CATEGORY</h1>

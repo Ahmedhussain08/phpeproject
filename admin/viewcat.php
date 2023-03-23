@@ -48,20 +48,27 @@ if ($success) {
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <style>
+      #color{
+        color:blue !important;
+        background-color: white !important;
+      }
+    </style>
 </head>
 <body>
     <a href="index.php?addcat" class="btn btn-success my-2">ADD NEW</a>
     <p><?php echo $error; ?></p>
         <div class="row">
-            <div class="col-lg-11 col-md-9 col-xl-3 col-sm-6 grid-margin mx-auto rounded">
-                 <table class="table border border-white border-3 bg-dark text-white rounded">
-                     <tr class="border border-white border-3 bg-dark ">
-                         <thead class="border border-white border-3" >
-                             <th>S.NO</th>
-                             <th> CATEGORY NAME</th>
-                             <th> ACTIONS</th>
-                         </thead>
-                     </tr>
+            <div class="col-lg-11 col-md-9 col-xl-8 col-sm-9 grid-margin mx-auto rounded">
+                 <table class="table  text-white ">
+                 <thead id="color">
+                          <tr id="color">
+                            <th> S.No </th>
+                            <th> Category Name </th>
+                            <th> Action </th>
+                            
+                          </tr>
+                        </thead>
                      <?php
                      $i=1;
                          $row = mysqli_query($con,"select * from category");
@@ -70,10 +77,10 @@ if ($success) {
                              
                              echo 
                              '
-                             <tr class="border border-primary border-2" >
-                             <td class="border border-primary border-2 fw-bold fs-2" >'.$i++.'</td>
-                             <td class="border border-primary border-2 fw-bold fs-3 text-uppercase">'.$data[1].'</td>
-                             <td class="border border-primary border-2" ><a href="editcat.php?editcat='.$data[0].'" class="btn btn-primary" >
+                             <tr class="border " >
+                             <td class="border  fw-bold fs-2" >'.$i++.'</td>
+                             <td class="border  fw-bold fs-3 text-uppercase">'.$data[1].'</td>
+                             <td class="border " ><a href="editcat.php?editcat='.$data[0].'" class="btn btn-primary" >
                              EDIT
                            </a>
                              <a href="viewcat.php?deleteid='.$data[0].'" class= "btn btn-danger"> delete <a/></td>
