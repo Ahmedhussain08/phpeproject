@@ -54,12 +54,12 @@ if(isset($_GET['deletepro'])){
     $product = mysqli_query($con, "select * from product");
     while ($row = mysqli_fetch_array($product)) {
     ?>
-        <div class="col-md-4 col-lg-3 col-sm-5 mx-auto my-2">
-            <div id="card" class="card my-1 bg-dark" style="width: 12rem;">
-                <img src="productimages/<?php echo $row[4] ?>" class="card-img-top img-fluid " alt="...">
+        <div class="col-md-4 col-lg-3 col-sm-5 -auto my-2">
+            <div id="card" class="card my-1 bg-dark border border-white" style="width: 12rem;">
+                <img style="height:130px ;" src="productimages/<?php echo $row[4] ?>" class="card-img-top img-fluid " alt="...">
                 <div class="card-body white">
                     <h5 class="card-title text- fw-bold mb-3"><?php echo $row[1] ?></h5>
-                    <p class="card-text  text- mt-2"><?php echo $row[3] ?></p>
+                    <p class="card-text  text- mt-1"><?php echo $row[3] ?></p>
                     <p href="" class="text-primary mt-2 fw-bold"> RS. <?php echo $row[2] ?></p>
                     <div class="d-flex justify-content-between">
                         <a href="edit-product.php?editpro=<?php echo $row[0] ?>" class="btn btn-secondary">Edit</a>

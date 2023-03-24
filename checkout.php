@@ -22,8 +22,8 @@ if(isset($_POST['order']))
             $DOB = $_POST['dob'];
             $remarks = $_POST['remark'];
           
-            $sql =  mysqli_query($con,"INSERT INTO ordertb (pid, CustomerID, price, qty, netamount, customername, email,contact, addres,DOB,remarks)
-            VALUES ('$product_id', '{$customer['cID']}',  '$price', '$quantity', '$netamount' , '{$customer['cname']}',  '{$customer['cemail']}', '{$customer['ccontact']}', '$address','$DOB','$remarks')");
+            $sql =  mysqli_query($con,"INSERT INTO ordertb (pid,pname, CustomerID, price, qty, netamount, customername, email,contact, addres,DOB,remarks)
+            VALUES ('$product_id','$product_name', '{$customer['cID']}',  '$price', '$quantity', '$netamount' , '{$customer['cname']}',  '{$customer['cemail']}', '{$customer['ccontact']}', '$address','$DOB','$remarks')");
 
             if ($sql) {
                 unset($_SESSION['cart']);
