@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2023 at 06:45 PM
+-- Generation Time: Mar 25, 2023 at 05:27 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -78,7 +78,8 @@ INSERT INTO `customer` (`cID`, `cname`, `cemail`, `cpassword`, `ccontact`) VALUE
 (3, 'babar', '123@gmail.com', '2', '02222'),
 (4, 'jabbar', '0@gmail.com', '1', '32323'),
 (5, 'faizan', 'q@gmail.com', '1', '1234'),
-(6, 'Ahmed', '1@gmail.com', '1', '123456');
+(6, 'Ahmed', '1@gmail.com', '1', '123456'),
+(7, 'rohit', 'rohit@GMAIL.com', '1', '111');
 
 -- --------------------------------------------------------
 
@@ -89,6 +90,7 @@ INSERT INTO `customer` (`cID`, `cname`, `cemail`, `cpassword`, `ccontact`) VALUE
 CREATE TABLE `ordertb` (
   `oid` int(11) NOT NULL,
   `Pid` int(11) NOT NULL,
+  `pname` varchar(255) NOT NULL,
   `CustomerID` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
@@ -105,14 +107,15 @@ CREATE TABLE `ordertb` (
 -- Dumping data for table `ordertb`
 --
 
-INSERT INTO `ordertb` (`oid`, `Pid`, `CustomerID`, `price`, `qty`, `netamount`, `customername`, `email`, `contact`, `addres`, `DOB`, `remarks`) VALUES
-(32, 9, 1, 2800, 1, 2800, 'lala', '10@gmail.com', 1, 'awami colony karachi', '2011-02-16', 'yhjghfg'),
-(33, 11, 3, 50000, 1, 50000, 'babar', '123@gmail.com', 2222, 'malir karachi', '2023-03-02', '        we3e'),
-(36, 12, 4, 4000, 3, 12000, 'jabbar', '0@gmail.com', 32323, 'steel town', '2022-10-05', '        vb vgcb '),
-(37, 10, 5, 950, 6, 5700, 'faizan', 'q@gmail.com', 1234, 'mehmoodabad', '2022-04-05', '        gf'),
-(38, 13, 6, 2500, 1, 2500, 'Ahmed', '1@gmail.com', 123456, 'korangi', '2023-03-01', '        fgr'),
-(39, 13, 6, 2500, 1, 2500, 'Ahmed', '1@gmail.com', 123456, 'korangi', '2023-03-04', '        hfg'),
-(40, 14, 6, 2500, 3, 7500, 'Ahmed', '1@gmail.com', 123456, 'awami colony karachi', '2023-03-04', '        wew');
+INSERT INTO `ordertb` (`oid`, `Pid`, `pname`, `CustomerID`, `price`, `qty`, `netamount`, `customername`, `email`, `contact`, `addres`, `DOB`, `remarks`) VALUES
+(32, 9, 'Womens Diamond Ring', 1, 2800, 1, 2800, 'lala', '10@gmail.com', 1, 'awami colony karachi', '2011-02-16', 'yhjghfg'),
+(33, 11, 'Necklace Gold women', 3, 50000, 1, 50000, 'babar', '123@gmail.com', 2222, 'malir karachi', '2023-03-02', '        we3e'),
+(36, 12, 'Foundation Forever Makeup', 4, 4000, 3, 12000, 'jabbar', '0@gmail.com', 32323, 'steel town', '2022-10-05', '        vb vgcb '),
+(37, 10, 'AXE mens Perfume', 5, 950, 6, 5700, 'faizan', 'q@gmail.com', 1234, 'mehmoodabad', '2022-04-05', '        gf'),
+(38, 13, 'MEns Rolex watch', 6, 2500, 1, 2500, 'Ahmed', '1@gmail.com', 123456, 'korangi', '2023-03-01', '        fgr'),
+(39, 13, 'MEns Rolex watch', 6, 2500, 1, 2500, 'Ahmed', '1@gmail.com', 123456, 'korangi', '2023-03-04', '        hfg'),
+(40, 14, 'Hugo Boss Perfume', 6, 2500, 3, 7500, 'Ahmed', '1@gmail.com', 123456, 'awami colony karachi', '2023-03-04', '        wew'),
+(41, 11, 'Necklace Gold women', 7, 50000, 3, 150000, 'rohit', 'rohit@GMAIL.com', 111, 'saddar', '2023-03-04', '        eeweew');
 
 -- --------------------------------------------------------
 
@@ -223,13 +226,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `ordertb`
 --
 ALTER TABLE `ordertb`
-  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `product`
