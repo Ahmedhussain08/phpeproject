@@ -29,7 +29,7 @@
     </style>
 </head>
 <body>
-  <h1 class="text-center text-danger ">TOP CUSTOMERS</h1>
+  <h1 class="text-center text-danger ">TOP PRODUCTS</h1>
     <div class="row text-center mt">
               <div class="col-lg-11 col-md-10 col-xl-8 col-sm-6 grid-margin mx-auto rounded ">
             

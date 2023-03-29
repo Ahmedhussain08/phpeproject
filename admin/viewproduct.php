@@ -1,9 +1,22 @@
 <?php
 include("connect.php");
+$error = '';
+$success = false;
 if(isset($_GET['deletepro'])){
-    $deletepro = $_GET['deletepro'];
-    $sql = mysqli_query($con,"delete from product where pid = '$deletepro'");
+
+    try {
+        $deletepro = $_GET['deletepro'];
+        $sql = mysqli_query($con,"delete from product where pid = '$deletepro'");
+        $success = true;
+    }
+    catch (mysqli_sql_exception $e) {
+        // Display your custom error message
+        $error= "<p class='text-danger mx-2 my-1'>Unable to delete product: This product is currently in orders</p>";
+    }
+}
+if ($success) {
     header("location:index.php?viewproduct");
+    exit;
 }
  ?>
 <!DOCTYPE html>
@@ -13,6 +26,8 @@ if(isset($_GET['deletepro'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
@@ -49,7 +64,9 @@ if(isset($_GET['deletepro'])){
     </style>
 </head>
 <body>
+    <p class=""><?php echo $error; ?></p>
 <div class="row text-center">
+
     <?php
     $product = mysqli_query($con, "select * from product");
     while ($row = mysqli_fetch_array($product)) {

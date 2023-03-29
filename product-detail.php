@@ -394,7 +394,7 @@ if(isset($_POST['add_to_cart']))
 						<?php echo $row[3] ?>
 
 						</p>
-						<div class="p-t-33">
+						<!-- <div class="p-t-33">
 							
 
 							<div class="flex-w flex-r-m p-b-10">
@@ -404,19 +404,13 @@ if(isset($_POST['add_to_cart']))
 
 								<div class="size-204 respon6-next ">
 									<div class="rs1-select2 bor8 bg0">
-										<select class="js-select2" name="time">
-											<option>Choose an option</option>
-											<option>Red</option>
-											<option>Blue</option>
-											<option>White</option>
-											<option>Grey</option>
-										</select>
+									
 										<div class="dropDownSelect2"></div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
-							 <div class="flex-w flex p-b-10 ">
+							 <div class="flex-w flex p-b-10 my-5">
 								<div class="size-204 flex-w flex-m respon6-next">
 									<!-- <div class="wrap-num-product flex-w m-r-2 m-tb-10"> -->
 										<!-- <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">

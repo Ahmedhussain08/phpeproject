@@ -11,7 +11,7 @@ if(isset($_GET['deleteid'])){
     }
     catch (mysqli_sql_exception $e) {
         // Display your custom error message
-        $error= "<p>Unable to delete category: This category is currently being used by one or more products.</p>";
+        $error= "<p my-1 mx-2 text-danger>Unable to delete category: This category is currently being used by one or more products.</p>";
     }
 }
 
@@ -24,15 +24,16 @@ if ($success) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Document</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    
     <link href="assets/css/main.min.css" rel="stylesheet" />
     <link href="./assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
     <link href="./assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <title>Document</title>
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
