@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2023 at 05:27 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Apr 03, 2023 at 09:47 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `uname` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 CREATE TABLE `category` (
   `cid` int(11) NOT NULL,
   `cname` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
@@ -53,7 +53,7 @@ INSERT INTO `category` (`cid`, `cname`) VALUES
 (6, 'Perfumes'),
 (7, 'Makeup'),
 (8, 'Necklace'),
-(9, 'watches');
+(10, 'Lockets');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE `customer` (
   `cemail` varchar(50) NOT NULL,
   `cpassword` varchar(50) NOT NULL,
   `ccontact` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer`
@@ -101,7 +101,7 @@ CREATE TABLE `ordertb` (
   `addres` varchar(255) NOT NULL,
   `DOB` date NOT NULL,
   `remarks` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ordertb`
@@ -112,10 +112,10 @@ INSERT INTO `ordertb` (`oid`, `Pid`, `pname`, `CustomerID`, `price`, `qty`, `net
 (33, 11, 'Necklace Gold women', 3, 50000, 1, 50000, 'babar', '123@gmail.com', 2222, 'malir karachi', '2023-03-02', '        we3e'),
 (36, 12, 'Foundation Forever Makeup', 4, 4000, 3, 12000, 'jabbar', '0@gmail.com', 32323, 'steel town', '2022-10-05', '        vb vgcb '),
 (37, 10, 'AXE mens Perfume', 5, 950, 6, 5700, 'faizan', 'q@gmail.com', 1234, 'mehmoodabad', '2022-04-05', '        gf'),
-(38, 13, 'MEns Rolex watch', 6, 2500, 1, 2500, 'Ahmed', '1@gmail.com', 123456, 'korangi', '2023-03-01', '        fgr'),
-(39, 13, 'MEns Rolex watch', 6, 2500, 1, 2500, 'Ahmed', '1@gmail.com', 123456, 'korangi', '2023-03-04', '        hfg'),
 (40, 14, 'Hugo Boss Perfume', 6, 2500, 3, 7500, 'Ahmed', '1@gmail.com', 123456, 'awami colony karachi', '2023-03-04', '        wew'),
-(41, 11, 'Necklace Gold women', 7, 50000, 3, 150000, 'rohit', 'rohit@GMAIL.com', 111, 'saddar', '2023-03-04', '        eeweew');
+(41, 11, 'Necklace Gold women', 7, 50000, 3, 150000, 'rohit', 'rohit@GMAIL.com', 111, 'saddar', '2023-03-04', '        eeweew'),
+(42, 9, 'Womens Diamond Ring', 1, 2800, 1, 2800, 'lala', '10@gmail.com', 1, 'dsf', '2023-03-08', '        ws'),
+(43, 12, 'Foundation Forever Makeup', 6, 4000, 1, 4000, 'Ahmed', '1@gmail.com', 123456, 'karachi', '2021-05-05', '        ghjh');
 
 -- --------------------------------------------------------
 
@@ -130,7 +130,7 @@ CREATE TABLE `product` (
   `pdesc` varchar(200) NOT NULL,
   `pimage` varchar(250) NOT NULL,
   `catID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
@@ -141,8 +141,11 @@ INSERT INTO `product` (`pid`, `pname`, `pprice`, `pdesc`, `pimage`, `catID`) VAL
 (10, 'AXE mens Perfume', 950, 'Black coloured AXE', 'i.webp', 6),
 (11, 'Necklace Gold women', 50000, 'necklace for women', 'screen-1.jpg', 8),
 (12, 'Foundation Forever Makeup', 4000, 'Makeup forever  womens foundation', '4253cdd621f540cef2c0a59adfeec157.jpg', 7),
-(13, 'MEns Rolex watch', 2500, 'rolex blue wtch', 'i (1).webp', 9),
-(14, 'Hugo Boss Perfume', 2500, 'Hugo Boss Perfume', 'i (2).webp', 6);
+(14, 'Hugo Boss Perfume', 2500, 'Hugo Boss Perfume', 'i (2).webp', 6),
+(15, 'Forever silver locket for women', 800, 'new locket silver painted ', 'locket.webp', 10),
+(16, 'Silver girls necklace ', 2500, 'silver color painted necklace', 'i (3).webp', 8),
+(17, 'Gold platted Ring ', 4000, 'Gold platted girls ring', 'i (4).webp', 5),
+(18, 'Gold platted Ring ', 4000, 'Gold platted girls ring', 'i (4).webp', 5);
 
 -- --------------------------------------------------------
 
@@ -158,7 +161,7 @@ CREATE TABLE `shippment` (
   `address` varchar(50) NOT NULL,
   `Mobile` varchar(50) NOT NULL,
   `cardNumber` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -220,7 +223,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -232,13 +235,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `ordertb`
 --
 ALTER TABLE `ordertb`
-  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `shippment`
